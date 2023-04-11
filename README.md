@@ -1,4 +1,4 @@
-# Star-solo-alignment
+# Star-solo-alignment using CellRanger .bam files
 
 Sometimes Velocyto CLI does not detect key Genes while creating count matrix.
 Star Solo tends to solve the problem 
