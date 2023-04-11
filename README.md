@@ -1,9 +1,3 @@
 # Star-solo-alignment using CellRanger .bam files
 
-Sometimes Velocyto CLI does not detect key Genes while creating count matrix.
-Star Solo tends to solve the problem 
-
-The new count metrix can be created using the bam files as output from cellranger
-
-
-STAR --soloType CB_UMI_Simple --genomeDir /nfsdata/data/ref/velocity/star_latest --readFilesIn /path/to/bam/file/possorted_genome_bam.bam --readFilesType SAM SE --readFilesCommand samtools view -F 0x100 --soloInputSAMattrBarcodeSeq CR UR --outFilterScoreMin 30 --soloCBmatchWLtype 1MM_multi_Nbase_pseudocounts --soloUMIfiltering MultiGeneUMI_CR --soloUMIdedup 1MM_CR --soloCBlen 16 --soloUMIlen 12 --soloCBwhitelist /nfsdata/data/ref/velocity/3M-february-2018.txt --soloFeatures Gene Velocyto --runThreadN 50
+This GitHub commit introduces the Star-solo-alignment method as a solution to the issue of Velocyto CLI's inability to detect key genes during count matrix creation. The purpose of this repository is to reuse previously processed 10X count matrix information to generate a new count matrix that includes spliced and unspliced gene information from Star Solo. The workflow is divided into two parts: using the command line to map 10X .bam files with the reference genome to build count matrices, and using a Jupyter notebook to create an adata object that matches the cells and metadata from pre-analyzed count matrices from CellRanger count.
